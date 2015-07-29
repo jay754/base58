@@ -12,6 +12,7 @@
 const char* chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 int base = strlen(chars);
 
+void removeCharsFromString( std::string &str, char* charsToRemove );
 const char* reverse(const char *str);
 int ord(char letter);
 std::pair<int, int> divmod(int x, int y);

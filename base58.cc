@@ -6,7 +6,7 @@ Base58 Encoding and Decoding
 
 #include "base58.h"
 
-void removeCharsFromString( string &str, char* charsToRemove ) {
+void removeCharsFromString( std::string &str, char* charsToRemove ) {
    for ( unsigned int i = 0; i < strlen(charsToRemove); ++i ) {
       str.erase( remove(str.begin(), str.end(), charsToRemove[i]), str.end() );
    }
@@ -50,8 +50,9 @@ void b58Encode(const char* v){
   }
 
   while(acc > 0){
+    int acc2 = acc;
     acc = divmod(acc, 58).first;
-    mod = divmod(acc, 58).second;
+    mod = divmod(acc2, 58).second;
 
     final += chars[mod];
   }
@@ -60,5 +61,4 @@ void b58Encode(const char* v){
 int main(){
   b58Encode("bob");
   return 0;
-
 }
