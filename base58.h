@@ -6,14 +6,12 @@
 #include <assert.h>
 #include <algorithm>
 #include <functional>
-#include <cctype>
-#include <locale>
+#include <vector>
 
-const char* chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
-int base = strlen(chars);
-
+int index(const char* string, char checkChar);
 void removeCharsFromString( std::string &str, char* charsToRemove );
 const char* reverse(const char *str);
 int ord(char letter);
 std::pair<int, int> divmod(int x, int y);
 void b58Encode(const char* v);
+void b58Decode(const char* v);
